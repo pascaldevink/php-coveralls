@@ -105,6 +105,10 @@ class JobsRepository implements LoggerAwareInterface
      */
     protected function collectGitInfo()
     {
+        if (false === $this->config->useGitInformation()) {
+            return $this;
+        }
+
         $this->logger->info('Collect git info');
 
         $this->api->collectGitInfo();

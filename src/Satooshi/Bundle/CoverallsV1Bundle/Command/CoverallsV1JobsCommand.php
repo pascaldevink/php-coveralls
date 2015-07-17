@@ -67,6 +67,13 @@ class CoverallsV1JobsCommand extends Command
             'Exclude source files that have no executable statements'
         )
         ->addOption(
+            'git-information',
+            '-g',
+            InputOption::VALUE_OPTIONAL,
+            'Ignore git information',
+            true
+        )
+        ->addOption(
             'env',
             '-e',
             InputOption::VALUE_OPTIONAL,
@@ -119,6 +126,7 @@ class CoverallsV1JobsCommand extends Command
         ->load($ymlPath, $rootDir)
         ->setDryRun($input->getOption('dry-run'))
         ->setExcludeNoStatementsUnlessFalse($input->getOption('exclude-no-stmt'))
+        ->setGitInformation($input->getOption('git-information'))
         ->setVerbose($input->getOption('verbose'))
         ->setEnv($input->getOption('env'));
     }

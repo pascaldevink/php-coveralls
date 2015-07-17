@@ -71,6 +71,13 @@ class Configuration
     protected $excludeNoStatements = false;
 
     /**
+     * Whether to include git information.
+     *
+     * @var bool
+     */
+    protected $gitInformation = true;
+
+    /**
      * Whether to show log.
      *
      * @var boolean
@@ -314,6 +321,26 @@ class Configuration
     public function isExcludeNoStatements()
     {
         return $this->excludeNoStatements;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function useGitInformation()
+    {
+        return $this->gitInformation;
+    }
+
+    /**
+     * @param boolean $gitInformation
+     *
+     * @return \Satooshi\Bundle\CoverallsV1Bundle\Config\Configuration
+     */
+    public function setGitInformation($gitInformation)
+    {
+        $this->gitInformation = $gitInformation;
+
+        return $this;
     }
 
     /**
