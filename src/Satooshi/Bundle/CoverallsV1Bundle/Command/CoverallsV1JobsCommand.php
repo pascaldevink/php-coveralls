@@ -69,9 +69,8 @@ class CoverallsV1JobsCommand extends Command
         ->addOption(
             'git-information',
             '-g',
-            InputOption::VALUE_OPTIONAL,
-            'Ignore git information',
-            true
+            InputOption::VALUE_NONE,
+            'Add git information'
         )
         ->addOption(
             'env',
